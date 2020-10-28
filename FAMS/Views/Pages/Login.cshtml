@@ -1,0 +1,73 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FAMS | Login</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+    
+    <link href="~/Content/plugins/sweetalert/sweetalert2.css" rel="stylesheet">
+    <link href="~/Content/plugins/sweetalert/sweetalert2.min.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+                <h4 class="logo-name">FAMS</h4>
+            </div>
+            <h3>Fixed Assets Management System</h3>
+            <p>Login in. To see it in action.</p>
+            <form class="m-t" role="form" action="#">
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Username" id="uname" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" id="pass">
+                </div>
+                <button type="button" class="btn btn-primary block full-width m-b" id="login">Login</button>
+
+                @*<a href="#"><small>Forgot password?</small></a>*@
+            </form>
+            <p class="m-t">
+                <small> Copyright &copy; 2020 <strong>Pag-IBIG Fund.</strong> All rights reserved.</small>
+            </p>
+        </div>
+    </div>
+
+    @Scripts.Render("~/plugins/sweetalert2")
+    @Scripts.Render("~/plugins/core")
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        $('#login').on('click', function () {
+            if ($('#uname').val() == '' || $('#pass').val() == '') {
+                $('#uname').focus();
+                Swal.fire({
+                    title: 'Invalid Login!',
+                    text: 'Please enter your username and password.',
+                    icon: 'warning',
+                });
+                
+            }
+            else {
+                window.location = '@Url.Action("Main", "Home")';
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+

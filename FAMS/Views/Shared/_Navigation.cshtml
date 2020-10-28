@@ -1,0 +1,60 @@
+﻿<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="profile-element">
+                    <a href="@Url.Action("Main", "Home")">
+                        @*<div class="row">
+                            <div class="col-sm-4">
+                                <img alt="image" class="img-fluid" src="~/Content/patterns/HDMF2.png" />
+                            </div>
+                            <div class="col-sm-8">
+                                <h3 style="font-family: Tahoma; font-weight: bold;">
+                                    Fixed Assets <br />
+                                    Management <br />
+                                    System
+                                </h3>
+                            </div>
+                        </div>*@
+                        <img alt="image" class="img-fluid" src="~/Content/patterns/FAMSLogo3.png" title="Home Page" />
+                    </a>
+                </div>
+                
+                <div class="logo-element">
+                    <a href="@Url.Action("Main", "Home")" title="Home Page">FAMS</a>
+                </div>
+            </li>
+            <li class="@Html.IsSelected(controller: "RI")">
+                <a href="@Url.Action("ReceiveInspect", "RI")"><i class="fa fa-random"></i> <span class="nav-label" data-i18n="nav.layouts">Receiving and Inspection </span><span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@Html.IsSelected(action: "PO")"><a href="@Url.Action("PO", "RI")">PO Details</a></li>
+                    <li class="@Html.IsSelected(action: "RD")"><a href="@Url.Action("RD", "RI")">Receive Deliveries</a></li>
+                    <li class="@Html.IsSelected(action: "Inspection")"><a href="@Url.Action("Inspection", "RI")">Inspection</a></li>
+                    <li class="@Html.IsSelected(action: "Approval")"><a href="@Url.Action("Approval", "RI")">Approval</a></li>
+                </ul>
+            </li>
+            @*<li class="@Html.IsSelected(controller: "Evaluation")">
+                <a href="@Url.Action("InitialEval", "Evaluation")"><i class="fa fa-retweet"></i> <span class="nav-label" data-i18n="nav.layouts">Evaluation </span> </a>
+            </li>*@
+            <li class="@Html.IsSelected(controller: "Asset")">
+                <a href="@Url.Action("AssetRegistry", "Asset")"><i class="fa fa-window-restore"></i> <span class="nav-label" data-i18n="nav.layouts">Asset Register Maintenance</span> <span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@Html.IsSelected(action: "assignment")"><a href="@Url.Action("assignment", "Asset")">Property Number Assignment</a></li>
+                    <li class="@Html.IsSelected(action: "barcode")"><a href="@Url.Action("barcode", "Asset")">Barcoding</a></li>
+                    <li class="@Html.IsSelected(action: "updating")"><a href="@Url.Action("updating", "Asset")">Asset Details Updating</a></li>
+                </ul>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Transfer")">
+                <a href="#"><i class="fa fa-reply-all"></i> <span class="nav-label" data-i18n="nav.layouts">Transfer of Accountability </span> </a>
+            </li>
+            <li class="@Html.IsSelected(controller: "RTS")">
+                <a href="#"><i class="fa fa-share-square-o"></i> <span class="nav-label" data-i18n="nav.layouts">Return to Store (RTS) </span> </a>
+            </li>
+            <li class="@Html.IsSelected(controller: "API")">
+                <a href="#")"><i class="fa fa-bar-chart"></i> <span class="nav-label" data-i18n="nav.layouts">Annual Physical Inventory </span> </a>
+            </li>
+
+        </ul>
+    </div>
+</nav>

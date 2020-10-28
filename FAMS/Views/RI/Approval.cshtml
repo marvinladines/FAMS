@@ -1,0 +1,228 @@
+﻿@{
+    ViewBag.Title = "Approval";
+}
+
+<div class="row">
+    <div class="col-sm-6" style="margin-top: 5px;">
+        <div class="form-inline my-2 my-lg-0">
+            <input class="txt-Search form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search">
+            <button class=" btn btn-success my-2 my-sm-0 " type="button" id="btnSearch">
+                Search&nbsp;<i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<hr />
+
+
+<div class="row">
+    <div class="col-sm-12" style="margin-top: 5px;">
+        <h3>List of Pending IAR for Approval</h3>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered" id="tblInspection2">
+        <thead>
+            <tr>
+                <th></th>
+                <th>IAR No.</th>
+                <th>Received Quantity</th>
+                <th>Received Date</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><button class="btn btn-secondary btn-sm">Select</button></td>
+                <td>000001</td>
+                <td>10</td>
+                <td>10/15/2020</td>
+                <td>Mandaluyong Metro Manila</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="card">
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-sm-12" style="margin-top: 5px;">
+                <h3>IAR Details</h3>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-sm-3" style="margin-top: 5px;">
+                <label for="inputEmail4">Inspection Team - Property Officers</label>
+                <select class="form-control">
+                    <option selected>mwladines</option>
+                </select>
+            </div>
+
+
+            <div class="col-sm-2" style="margin-top: 5px;">
+                <label class="form-control-label">Completeness</label>
+                <div>
+                    <input type="radio" id="male" name="gender" value="male" checked="checked">
+                    <label for="male">Complete</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Partial</label>
+                </div>
+            </div>
+
+            <div class="col-sm-3" style="margin-top: 5px;">
+                <label class="form-control-label">Date Inspected</label>
+                <div class="input-group date">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="PO_Date" type="text" class="form-control" autocomplete="off" value="10/24/20">
+                </div>
+            </div>
+
+            <div class="col-sm-2" style="margin-top: 5px;">
+                <label class="form-control-label">Inspected, found</label>
+                <div>
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                    <label for="vehicle1"></label><br>
+                </div>
+            </div>
+            <div class="col-sm-2" style="margin-top: 5px;">
+                <label class="form-control-label">With Findings</label>
+                <div>
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" checked>
+                    <label for="vehicle1"></label><br>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12" style="margin-top: 5px;">
+                <div class="form-group row-top">
+                    <label class="form-control-label">Details of Findings</label>
+                    <textarea class="form-control" style="resize: none;">With findings.....</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12" style="margin-top: 5px;">
+                <h4>Assets in IAR: 000001</h4>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="footable table table-stripped toggle-arrow-tiny" id="tblAsset2">
+                <thead>
+                    <tr>
+
+                        <th>Item No</th>
+                        <th>Qty</th>
+                        <th>Unit</th>
+                        <th>Items and Description</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+
+                        <th>Qty of Inspected</th>
+                        <th>Qty of Good Items</th>
+                        <th>Qty of Defective Items</th>
+                        @*<th>Reject Reason</th>*@
+
+                        <th data-hide="all">Items and Specification</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                        <td>0001</td>
+                        <td>2</td>
+                        <td>123</td>
+                        <td>HP Laptop</td>
+                        <td>50,000.00</td>
+                        <td>2</td>
+                        <td>123</td>
+                        <td>120</td>
+                        <td>3</td>
+                        @*<td>
+                            <select class="form-control">
+                                <option selected></option>
+                                <option value="Supplier1">May Sira</option>
+                                <option value="Supplier2">May Basa</option>
+                                <option value="Supplier3">May Wasak</option>
+                            </select>
+                        </td>*@
+                        <td>
+                            Operating System MINIMUM Windows 8.1 RECOMMENDED Windows 10 Home or Pro Productivity Tools Microsoft Office can be downloaded for FREE from go.du.edu/office365 Microsoft Office can be downloaded for FREE from go.du.edu/office365 Windows Emulation Software (check with academic advisor) N/A Please contact the IT Help Center to discuss your options before purchasing a Mac needing Windows. Processor Type MINIMUM Core i5 Processor RECOMMENDED Core i7 Processor MINIMUM Core i5 Processor RECOMMENDED Core i7 Processor Memory MINIMUM 8 GB RAM or higher MINIMUM 8 GB RAM or higher Hard Drive MINIMUM 250 GB *Do not purchase a 128 GB HD* RECOMMENDED 500 GB or higher MINIMUM 250 GB* Do not purchase a 128 GB HD* RECOMMENDED 500 GB or higher Graphics Card MINIMUM 512 MB Video Memory or higher MINIMUM 512 MB Video Memory or higher
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="row text-right">
+            <div class="col-sm-12" style="margin-top: 5px;">
+                <button type="button" class="btn btn-success" data-dismiss="modal">
+                    Approve&nbsp;<i class="fa fa-floppy-o"></i>
+                </button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">
+                    Rejection Report&nbsp;<i class="fa fa-file"></i>
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<br />
+<br />
+
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+    @*@Styles.Render("~/plugins/select2Styles")*@
+    @Styles.Render("~/plugins/footableStyles")
+}
+@section Scripts {
+    @Scripts.Render("~/plugins/dataTables")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/chosen")
+    @Scripts.Render("~/plugins/footable")
+    @*@Scripts.Render("~/plugins/select2")*@
+}
+
+
+@Scripts.Render("~/Scripts/jquery-3.1.1.min.js")
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$('#PO_Date').datepicker({ autoclose: true });
+        //$('#PO_OASD').datepicker({ autoclose: true });
+        //$('#PO_ROSD').datepicker({ autoclose: true });
+        //$('#PO_AOSD').datepicker({ autoclose: true });
+        //$(".chosen-select").chosen();
+
+        $('#tblInspection2').DataTable({
+            pageLength: 10,
+            lengthChange: false,
+            searching: false,
+            //paging: false
+        });
+        $('#tblAsset2').footable();
+    });
+
+
+
+
+
+</script>

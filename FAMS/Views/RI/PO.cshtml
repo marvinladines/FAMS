@@ -1,0 +1,468 @@
+﻿@{
+    ViewBag.Title = "PO Details";
+}
+<style>
+    .marg_top {
+        margin-top: 5px;
+    }
+    .panel-footer {
+        height: 8vh;
+    }
+    .ui-datepicker {
+       background: #333;
+       border: 1px solid #555;
+       color: #EEE;
+    }
+</style>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="tabs-container">
+                <ul class="nav nav-tabs">
+                    <li><a class="nav-link active" data-toggle="tab" href="#tab-1"> PO Basic Information</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#tab-2"> PO Item List</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#tab-3"> Terms and Conditions</a></li>
+                    <li><a class="nav-link" data-toggle="tab" href="#tab-4"> Signatories</a></li>
+                </ul>
+                <div class="tab-content">
+                    <!--1st TAB-->
+                    <div id="tab-1" class="tab-pane active">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-3" style="margin-top: 5px;">
+                                    <div class="form-group row-top">
+                                        <label class="form-control-label required">Purchase Order Number</label>
+                                        <input type="text" class="form-control" maxlength="20">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3" style="margin-top: 5px;">
+                                    <div class="form-group row-top">
+                                        <label class="form-control-label required">Purchase Order Date</label>
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="PO_Date" type="text" class="form-control" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3" style="margin-top: 5px;">
+                                    <div class="form-group row-top">
+                                        <label class="form-control-label required">Requisitioning Unit/s</label>
+                                        <select class="chosen-select form-control" multiple="multiple">
+                                            <option value="RU1">RU 1</option>
+                                            <option value="RU2">RU 2</option>
+                                            <option value="RU3">RU 3</option>
+                                            <option value="RU4">RU 4</option>
+                                            <option value="RU5">RU 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3" style="margin-top: 5px;">
+                                    <div class="form-group row-top">
+                                        <label class="form-control-label required">Purchase Request No.</label>
+                                        <select class="form-control chosen-select" multiple="multiple">
+                                            <option value="PRNo1">PR No 1</option>
+                                            <option value="PRNo2">PR No 2</option>
+                                            <option value="PRNo3">PR No 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3" style="margin-top: 5px;">
+                                    <div class="form-group row-top">
+                                        <label class="form-control-label required">Purchase Request Date</label>
+                                        <select class="form-control chosen-select" multiple="multiple">
+                                            <option value="PRDate1">PR Date 1</option>
+                                            <option value="PRDate2">PR Date 2</option>
+                                            <option value="PRDate3">PR Date 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-9" style="margin-top: 5px;">
+                                    <div class="form-group row-top">
+                                        <label class="form-control-label required">Delivery Site</label>
+                                        <textarea class="form-control" style="resize: none;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-9" style="margin-top: 5px;">
+                                    <div class="form-group row-top">
+                                        <label class="form-control-label required">Supplier Name</label>
+                                        <select class="form-control">
+                                            <option selected></option>
+                                            <option value="Supplier1">Supplier 1</option>
+                                            <option value="Supplier2">Supplier 2</option>
+                                            <option value="Supplier3">Supplier 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3" style="margin-top: 5px;">
+                                    <div class="form-group row-top">
+                                        <label class="form-control-label">Supply Terms</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4" style="margin-top: 5px;">
+                                    <div class="form-group row-top">
+                                        <label class="form-control-label">Payment Terms</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4" style="margin-top: 5px;">
+                                    <div class="form-group row-top">
+                                        <label class="form-control-label">Mode of Procurement</label>
+                                        <select class="form-control">
+                                            <option selected></option>
+                                            <option value="1">List 1</option>
+                                            <option value="2">List 2</option>
+                                            <option value="3">List 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4" style="margin-top: 5px;">
+                                    <div class="form-group row-top">
+                                        <label class="form-control-label">Invoice No.</label>
+                                        <select class="form-control chosen-select" multiple="multiple">
+                                            <option value="Invoice1">InvoiceNo 1</option>
+                                            <option value="Invoice1">InvoiceNo 2</option>
+                                            <option value="Invoice1">InvoiceNo 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--END TAB-->
+
+                    <!--2nd TAB-->
+                    <div id="tab-2" class="tab-pane">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-3 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label required">Asset Category</label>
+                                        <select id="AssetCateg" class="form-control">
+                                            <option selected></option>
+                                            <option value="1">Asset Category 1</option>
+                                            <option value="2">Asset Category 2</option>
+                                            <option value="3">Asset Category 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label required">Asset Code</label>
+                                        <select id="AssetCode" class="form-control">
+                                            <option selected></option>
+                                            <option value="1">Asset Code 1</option>
+                                            <option value="2">Asset Code 2</option>
+                                            <option value="3">Asset Code 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label required">Asset Group</label>
+                                        <select id="AssetGrp" class="form-control">
+                                            <option selected></option>
+                                            <option value="1">Asset Group 1</option>
+                                            <option value="2">Asset Group 2</option>
+                                            <option value="3">Asset Group 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label required">Other Asset Attributes</label>
+                                        <select id="OtherAsset" class="form-control">
+                                            <option selected></option>
+                                            <option value="1">Other Asset 1</option>
+                                            <option value="2">Other Asset 2</option>
+                                            <option value="3">Other Asset 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label required">Item No.</label>
+                                        <input type="text" id="ItemNo" class="form-control" maxlength="20">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label required">Quantity</label>
+                                        <input type="text" id="Quantity" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label required">Unit</label>
+                                        <select class="form-control">
+                                            <option selected></option>
+                                            <option value="1">Unit 1</option>
+                                            <option value="2">Unit 2</option>
+                                            <option value="3">Unit 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label">Brand</label>
+                                        <input type="text" id="Brand" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label required">Items and Specification</label>
+                                        <textarea id="ItemSpec" class="form-control" style="resize: none;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label">Model</label>
+                                        <input type="text" id="Model" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label required">Unit Price</label>
+                                        <input type="number" id="UnitPrice" class="form-control text-right" placeholder="0.00">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label required">Total Price</label>
+                                        <input type="number" id="TotalPrice" class="form-control text-right" placeholder="0.00">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label required">Requisitioning Unit</label>
+                                        <input type="number" id="ReqUnit" class="form-control" placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="text-right">
+                                <button class="btn btn-danger btn-sm"><i class="fa fa-minus-square"></i> Remove from List </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fa fa-check-square"></i>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Add to List
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </button>
+                            </div>*@
+                            <!--Table Div-->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table class="table table-bordered" id="tblPO_IL">
+                                        <thead>
+                                            <tr>
+                                                <th>Item No</th>
+                                                <th>Qty</th>
+                                                <th>Unit</th>
+                                                <th>Items and Description</th>
+                                                <th>Unit Price</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>0001</td>
+                                                <td>2</td>
+                                                <td>123</td>
+                                                <td>Sample Data Only 1</td>
+                                                <td>1,000.00</td>
+                                                <td>2</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0002</td>
+                                                <td>5</td>
+                                                <td>456</td>
+                                                <td>Sample Data Only 2</td>
+                                                <td>3,400.00</td>
+                                                <td>5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>0003</td>
+                                                <td>1</td>
+                                                <td>789</td>
+                                                <td>Sample Data Only 3</td>
+                                                <td>400.00</td>
+                                                <td>1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <button class="btn btn-danger btn-rounded btn-sm"><i class="fa fa-minus-square"></i> Remove from List </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fa fa-check-square"></i>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    Add to List
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END TAB-->
+
+                    <!--3rd TAB-->
+                    <div id="tab-3" class="tab-pane">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <table class="table table-bordered" id="tblPO_TC">
+                                        <thead>
+                                            <tr>
+                                                <th>Sequence</th>
+                                                <th>Terms and Conditions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Sample terms and conditions.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Another sample terms and conditions.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--END TAB-->
+
+                    <!--4th TAB-->
+                    <div id="tab-4" class="tab-pane">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-4 row-top">
+                                    <div class="form-group">
+                                        <label class="col-form-label required">Operations Accounting</label>
+                                        <select class="form-control">
+                                            <option selected></option>
+                                            <option value="OA1">OA 1</option>
+                                            <option value="OA2">OA 2</option>
+                                            <option value="OA3">OA 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 marg_top">
+                                    <div class="form-group row-top">
+                                        <label class="col-form-labe required">Operations Accounting Signing Date</label>
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="PO_OASD" type="text" class="form-control" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 marg_top">
+                                    <div class="form-group row-top">
+                                        <label class="col-form-labe required">Recommending Officer</label>
+                                        <select class="form-control">
+                                            <option selected></option>
+                                            <option value="RO1">RO 1</option>
+                                            <option value="RO2">RO 2</option>
+                                            <option value="RO3">RO 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 marg_top">
+                                    <div class="form-group row-top">
+                                        <label class="col-form-labe required">Recommending Officer Signing Date</label>
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="PO_ROSD" type="text" class="form-control" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 marg_top">
+                                    <div class="form-group row-top">
+                                        <label class="col-form-labe required">Approving Officer</label>
+                                        <select class="form-control">
+                                            <option selected></option>
+                                            <option value="AO1">AO 1</option>
+                                            <option value="AO2">AO 2</option>
+                                            <option value="AO3">AO 3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 marg_top">
+                                    <div class="form-group row-top">
+                                        <label class="col-form-labe required">Approving Officer Signing Date</label>
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="PO_AOSD" type="text" class="form-control" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <div class="panel-body panel-footer">
+                        <div class="text-right" style="margin-top: -12px;">
+                            <button class="btn btn-danger dim btn-outline btn-sm"><i class="fa fa-mail-reply"></i>
+                                &nbsp;&nbsp;&nbsp;
+                                Return
+                                &nbsp;&nbsp;&nbsp;
+                            </button>
+                            <button class="btn btn-primary dim btn-outline btn-sm"><i class="fa fa-folder"></i>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                Save
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </button>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+        </div>
+    </div>
+ </div>
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+    @*@Styles.Render("~/plugins/select2Styles")*@
+}
+@section Scripts {
+    @Scripts.Render("~/plugins/dataTables")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/chosen")
+    @*@Scripts.Render("~/plugins/select2")*@
+}
+
+@Scripts.Render("~/Scripts/jquery-3.1.1.min.js")
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#PO_Date').datepicker({ autoclose: true });
+        $('#PO_OASD').datepicker({ autoclose: true });
+        $('#PO_ROSD').datepicker({ autoclose: true });
+        $('#PO_AOSD').datepicker({ autoclose: true });
+        $(".chosen-select").chosen();
+
+        $('#tblPO_IL').DataTable({
+            pageLength: 10,
+            lengthChange: false,
+            searching: false,
+            //paging: false
+        });
+    });
+    
+</script>

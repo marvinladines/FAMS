@@ -1,0 +1,160 @@
+﻿
+@{
+    ViewBag.Title = "assignment";
+}
+<h4>Assignment of Property No.</h4>
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-6" style="margin-top: 5px;">
+        <div class="form-inline my-2 my-lg-0">
+            <input class="txt-Search form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search">
+            <button class=" btn btn-success my-2 my-sm-0 " type="button" id="btnSearch">
+                Search&nbsp;<i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<h4>Assets in IAR: 000001</h4>
+<table class="table table-bordered" id="tblAsset">
+    <thead>
+        <tr>
+            <th></th>
+            <th>PO No.</th>
+            <th>PO date</th>
+            <th>IAR No.</th>
+            <th>IAR Approval Date</th>
+            <th>Asset Category</th>
+            <th>Asset Code</th>
+
+            <th>Asset Group</th>
+            <th>Asset type</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>00001</td>
+            <td>10/24/20</td>
+            <td>0001</td>
+            <td>10/24/20</td>
+            <td>IT Equipment</td>
+            <td>ITE</td>
+
+            <td>Printer</td>
+            <td>Catridge</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>00002</td>
+            <td>10/24/20</td>
+            <td>0001</td>
+            <td>10/24/20</td>
+            <td>IT Equipment</td>
+            <td>ITE</td>
+
+            <td>Computer</td>
+            <td>Laptop</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="row text-right">
+    <div class="col-sm-12" style="margin-top: 5px;">
+        <button type="button" class="btn btn-success" data-dismiss="modal">
+            Assign Property No. for selected Assets&nbsp;<i class="fa fa-file"></i>
+        </button>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="searchModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Search Assets
+                </h4>
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body bg-light text-dark" id='searchContainer'>
+            </div>
+            <!-- Modal footer -->
+            @*<div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">
+                        Ok&nbsp;<i class="fa fa-check"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Cancel&nbsp;<i class="fa fa-times"></i>
+                    </button>
+                </div>*@
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+    @*@Styles.Render("~/plugins/select2Styles")*@
+}
+@section Scripts {
+    @Scripts.Render("~/plugins/dataTables")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/chosen")
+    @*@Scripts.Render("~/plugins/select2")*@
+}
+
+@Scripts.Render("~/Scripts/jquery-3.1.1.min.js")
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$('#PO_Date').datepicker({ autoclose: true });
+        //$('#PO_OASD').datepicker({ autoclose: true });
+        //$('#PO_ROSD').datepicker({ autoclose: true });
+        //$('#PO_AOSD').datepicker({ autoclose: true });
+        //$(".chosen-select").chosen();
+
+        $('#tblInspection').DataTable({
+            pageLength: 10,
+            lengthChange: false,
+            searching: false,
+            //paging: false
+        });
+
+        $('#tblAsset').DataTable({
+            pageLength: 10,
+            lengthChange: false,
+            searching: false,
+            //paging: false
+        });
+
+                $('#btnSearch').click(function () {
+
+            $('#searchModal').modal('show');
+            var url = '@Html.Raw(Url.Action("_searchPo", "Common"))';
+            $.get(url, function (data) {
+                $('#searchContainer').html(data);
+            });
+
+                });
+
+
+    });
+
+
+
+
+
+</script>

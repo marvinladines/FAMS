@@ -1,0 +1,63 @@
+﻿
+
+    <div class="form-inline my-2 my-lg-0">
+        <label class="form-control-label">Search By: &nbsp;&nbsp;</label>
+        <select class="form-control">
+            <option selected></option>
+            <option value="Supplier1">PO No.</option>
+            <option value="Supplier2">IAR No.</option>
+            <option value="Supplier3">Item No.</option>
+        </select>
+        &nbsp;
+        <input class="txt-Search form-control mr-sm-3" type="search" placeholder="" aria-label="Search">
+        <button class=" btn btn-success my-2 my-sm-0" type="button" id="btnSearchPo">
+            Search&nbsp;<i class="fa fa-search"></i>
+        </button>
+    </div>
+<br />
+<table class="table table-bordered" id="tblSearchPo">
+    <thead>
+        <tr>
+            <th></th>
+            <th>PO No.</th>
+            <th>PO Date</th>
+            <th>Supplier Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><button class="btn btn-success btn-sm btnSelectPo">Select&nbsp;<i class="fa fa-check"></i></button></td>
+            <td>000001</td>
+            <td>10/15/2020</td>
+            <td>ABC Furniture</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        //$('#tblSearchPo').DataTable({
+        //    pageLength: 10,
+        //    lengthChange: false,
+        //    searching: false,
+        //    //paging: false
+        //});
+
+        $('.btnSelectPo').click(function () {
+
+            $('#searchModal').modal('hide');
+
+        });
+
+
+
+    });
+
+
+
+
+
+</script>

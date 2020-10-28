@@ -1,0 +1,63 @@
+﻿<style>
+    .bg-white {
+        background-color: #fff;
+    }
+</style>
+<div class="row border-bottom">
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0; height: 8vh;">
+        <div class="navbar-header" style="margin-left: -10px; margin-top: -3px;">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            @*<form role="search" class="navbar-form-custom" method="post" action="">
+                    <div class="form-group">
+                        <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                    </div>
+                </form>*@
+        </div>
+        <!--
+        <ul class="nav navbar-top-links navbar-right">
+            <li style="padding:20px">
+                @*<span class="m-r-sm text-muted welcome-message" data-i18n="topnav.welcometext">Welcome to <strong style="color: #343a40; font-size: 16px; text-shadow: 2px 2px #c8c8c8;">Fixed Assets Management System</strong></span>*@
+                <span class="m-r-sm text-muted welcome-message" data-i18n="topnav.welcometext">Welcome <strong> &nbsp; JMARK MORALLA</strong></span>
+            </li>
+            <li>
+                <a href="@Url.Action("Login", "Pages")" title="Logout">
+                    <i class="fa fa-sign-out"></i>
+                </a>
+            </li>
+        </ul>
+        -->
+        <div class="theme-config" style="margin-top: -84px;">
+            <div class="theme-config-box">
+                <div class="spin-icon">
+                    <i class="fa fa-user-circle fa-spin"></i>
+                </div>
+                <div class="skin-settings bg-white">
+                    <div class="title bg-white">
+                        JMARK MORALLA
+                    </div>
+                    <div class="setings-item">
+                        <a href="@Url.Action("Login", "Pages")" style="color: #343a40;">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </div>
+                    
+                    <div class="dropdown-divider"></div>
+                    <div class="setings-item" style="margin-top: -6px; padding-bottom: 20px;">
+                        <span>Collapse menu</span>
+                        <div class="switch">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="collapsemenu">
+                                <label class="onoffswitch-label" for="collapsemenu">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</div>
